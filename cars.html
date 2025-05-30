@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>QuickRide Rentals - Cars</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #f4f6fa;
+      color: #333;
+    }
+    header {
+      background-color: #004aad;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .filters {
+      padding: 1rem 2rem;
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    select {
+      padding: 0.5rem;
+      font-size: 1rem;
+    }
+    .car-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      padding: 2rem;
+    }
+    .car-card {
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+    .car-card:hover {
+      transform: translateY(-5px);
+    }
+    .car-card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+    }
+    .car-card h3, .car-card p, .car-details {
+      margin: 0.75rem 1rem;
+    }
+    .car-details span {
+      display: block;
+      font-size: 0.85rem;
+      color: #555;
+    }
+    footer {
+      background-color: #004aad;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h2>QuickRide Rentals</h2>
+    <nav>
+      <a href="home.html">Home</a>
+      <a href="cars.html">Cars</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+      <a href="faq.html">FAQ</a>
+      <a href="login.html">Login</a>
+      <a href="sign up.html">Sign Up</a>
+    </nav>
+  </header>
+
+  <!-- Filter Dropdowns -->
+  <div class="filters">
+    <select id="categoryFilter">
+      <option value="">All Categories</option>
+      <option value="CAT01">SUV</option>
+      <option value="CAT02">Sedan</option>
+      <option value="CAT03">Luxury</option>
+    </select>
+
+    <select id="statusFilter">
+      <option value="">All Statuses</option>
+      <option value="Available">Available</option>
+      <option value="Rented">Rented</option>
+    </select>
+  </div>
+
+  <!-- Car List -->
+  <section class="car-list" id="carList">
+    <a href="car-detail-Ford Explorer.html" style="text-decoration: none; color: inherit;">
+    <div class="car-card" data-category="CAT01" data-status="Available">
+      <img src="https://www.germainfordofbeavercreek.com/static/dealer-18421/24_Escape_Thumb.webp" alt="SUV" />
+      <h3>Ford Explorer</h3>
+      <p>SUV - $80/day</p>
+      <div class="car-details">
+        
+
+        <div class="insurance-details" style="background-color: #eef4ff; padding: 0.75rem; border-radius: 8px;">
+      <strong>Insurance Info</strong><br />
+      <span><strong>Policy Number:</strong> POL123456</span><br />
+      <span><strong>Expiry Date:</strong> 2026-01-01</span><br />
+      <span><strong>Provider:</strong> Allianz</span>
+         </div>
+      </div>
+    </div>
+    </a>
+
+
+    <a href="car-detail-Toyota Camry.html" style="text-decoration: none; color: inherit;">
+    <div class="car-card" data-category="CAT02" data-status="Rented">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPe5GsX7PGh2k4xf0kWx-H1AvoLHN8v9Reng&s" alt="Sedan" />
+      <h3>Toyota Camry</h3>
+      <p>Sedan - $50/day</p>
+      <div class="car-details">
+
+        <div class="insurance-details" style="background-color: #eef4ff; padding: 0.75rem; border-radius: 8px;">
+  <strong>Insurance Info</strong><br />
+  <span><strong>Policy Number:</strong> POL223457</span><br />
+  <span><strong>Expiry Date:</strong> 2025-11-15</span><br />
+  <span><strong>Provider:</strong> State Farm</span>
+      </div>
+      </div>
+    </div>
+</a>
+
+<a href="car-detail-bmw 5 series.html" style="text-decoration: none; color: inherit;">
+    <div class="car-card" data-category="CAT03" data-status="Available">
+      <img src="https://i.ytimg.com/vi/8ePEUTwBaBY/hq720.jpg" alt="Luxury" />
+      <h3>BMW 5 Series</h3>
+      <p>Luxury - $120/day</p>
+      <div class="car-details">
+
+        <div class="insurance-details" style="background-color: #eef4ff; padding: 0.75rem; border-radius: 8px;">
+  <strong>Insurance Info</strong><br />
+  <span><strong>Policy Number:</strong> POL323458</span><br />
+  <span><strong>Expiry Date:</strong> 2025-09-30</span><br />
+  <span><strong>Provider:</strong> Geico</span>
+</div>
+      </div>
+    </div>
+</a>
+
+
+
+<a href="car-detail-Hyundai Elantra.html" style="text-decoration: none; color: inherit;">
+
+    <div class="car-card" data-category="CAT02" data-status="Rented">
+  <img src="https://file.kelleybluebookimages.com/kbb/base/evox/CP/54632/2025-Hyundai-Elantra%20N-front_54632_032_2400x1800_A2B.png" />
+  <h3>Hyundai Elantra</h3>
+  <p>Sedan - $114/day</p>
+  <div class="car-details">
+    <div class="insurance-details" style="background-color: #eef4ff; padding: 0.75rem; border-radius: 8px;">
+  <strong>Insurance Info</strong><br />
+  <span><strong>Policy Number:</strong> POL423459</span><br />
+  <span><strong>Expiry Date:</strong> 2025-07-20</span><br />
+  <span><strong>Provider:</strong> Progressive</span>
+</div>
+  </div>
+</div>
+</a>
+
+
+<a href="car-detail-Chevrolet Tahoe.html" style="text-decoration: none; color: inherit;">
+<div class="car-card" data-category="CAT01" data-status="Rented">
+  <img src="https://www.chevrolet.com/content/dam/chevrolet/na/us/english/index/vehicles/2025/suvs/tahoe/design/2025-tahoe-mov-design-03.png?imwidth=3000" alt="SUV" />
+  <h3>Chevrolet Tahoe</h3>
+  <p>SUV - $110/day</p>
+  <div class="car-details">
+    <div class="insurance-details" style="background-color: #eef4ff; padding: 0.75rem; border-radius: 8px;">
+  <strong>Insurance Info</strong><br />
+  <span><strong>Policy Number:</strong> POL523460</span><br />
+  <span><strong>Expiry Date:</strong> 2026-03-05</span><br />
+  <span><strong>Provider:</strong> Liberty Mutual</span>
+</div>
+  </div>
+</div>
+</a>
+
+<a href="car-detail-Audi A6.html" style="text-decoration: none; color: inherit;">
+
+<div class="car-card" data-category="CAT03" data-status="Rented">
+  <img src="https://ev-database.org/img/auto/Audi_A6_Sportback_etron_2024/Audi_A6_Sportback_etron_2024-01@2x.jpg" alt="Luxury" />
+  <h3>Audi A6</h3>
+  <p>Luxury - $118/day</p>
+  <div class="car-details">
+    <div class="insurance-details" style="background-color: #eef4ff; padding: 0.75rem; border-radius: 8px;">
+  <strong>Insurance Info</strong><br />
+  <span><strong>Policy Number:</strong> POL623461</span><br />
+  <span><strong>Expiry Date:</strong> 2025-08-11</span><br />
+  <span><strong>Provider:</strong> Travelers</span>
+</div>
+  </div>
+</div>
+</a>
+
+<a href="car-detail-Kia Soul.html" style="text-decoration: none; color: inherit;">
+
+<div class="car-card" data-category="CAT04" data-status="Available">
+  <img src="https://www.kia.com/content/dam/kia/us/en/vehicles/soul/2025/mep/inpage-gallery/my25-soul-mep-gallery-carousel-1.jpg" alt="Hatchback" />
+  <h3>Kia Soul</h3>
+  <p>Hatchback - $60/day</p>
+  <div class="car-details">
+    
+    <div class="insurance-details" style="background-color: #eef4ff; padding: 0.75rem; border-radius: 8px;">
+  <strong>Insurance Info</strong><br />
+  <span><strong>Policy Number:</strong> POL723462</span><br />
+  <span><strong>Expiry Date:</strong> 2026-02-28</span><br />
+  <span><strong>Provider:</strong> Nationwide</span>
+</div>
+  </div>
+</div>
+</a>
+
+
+<a href="car-detail-Jeep Wrangler.html" style="text-decoration: none; color: inherit;">
+
+<div class="car-card" data-category="CAT01" data-status="Available">
+  <img src="https://images.cdn.autocar.co.uk/sites/autocar.co.uk/files/jeep-wrangler-review-2024-01-cornering-front.jpg" alt="SUV" />
+  <h3>Jeep Wrangler</h3>
+  <p>SUV - $92/day</p>
+  <div class="car-details">
+    <div class="insurance-details" style="background-color: #eef4ff; padding: 0.75rem; border-radius: 8px;">
+  <strong>Insurance Info</strong><br />
+  <span><strong>Policy Number:</strong> POL823463</span><br />
+  <span><strong>Expiry Date:</strong> 2025-12-12</span><br />
+  <span><strong>Provider:</strong> Farmers</span>
+</div>
+  </div>
+</div>
+</a>
+
+
+<a href="car-detail-Mercedes C-Class.html" style="text-decoration: none; color: inherit;">
+
+<div class="car-card" data-category="CAT03" data-status="Available">
+  <img src="https://www.topgear.com/sites/default/files/2021/11/Mercedes_C300D_0000.jpg" alt="Luxury" />
+  <h3>Mercedes C-Class</h3>
+  <p>Luxury - $100/day</p>
+  <div class="car-details">
+    <div class="insurance-details" style="background-color: #eef4ff; padding: 0.75rem; border-radius: 8px;">
+  <strong>Insurance Info</strong><br />
+  <span><strong>Policy Number:</strong> POL923464</span><br />
+  <span><strong>Expiry Date:</strong> 2026-04-01</span><br />
+  <span><strong>Provider:</strong> USAA</span>
+</div>
+  </div>
+</div>
+</a>
+
+
+<a href="car-detail-Mini Cooper.html" style="text-decoration: none; color: inherit;">
+
+<div class="car-card" data-category="CAT06" data-status="Rented">
+  <img src="https://www.motortrend.com/uploads/2022/11/2023-Mini-Cooper-SE-11.jpg" alt="Electric" />
+  <h3>Mini Cooper SE</h3>
+  <p>Electric - $75/day</p>
+  <div class="car-details">
+    <div class="insurance-details" style="background-color: #eef4ff; padding: 0.75rem; border-radius: 8px;">
+  <strong>Insurance Info</strong><br />
+  <span><strong>Policy Number:</strong> POL103465</span><br />
+  <span><strong>Expiry Date:</strong> 2025-06-10</span><br />
+  <span><strong>Provider:</strong> MetLife</span>
+</div>
+  </div>
+</div>
+</a>
+
+
+<a href="car-detail-Ford Maverick.html" style="text-decoration: none; color: inherit;">
+
+<div class="car-card" data-category="CAT05" data-status="Available">
+  <img src="https://di-uploads-pod45.dealerinspire.com/applefordshakopee/uploads/2024/07/2025_Ford_Maverick_Eruption_Green.jpg" alt="Pickup" />
+  <h3>Ford Maverick</h3>
+  <p>Pickup Truck - $65/day</p>
+  <div class="car-details">
+    <div class="insurance-details" style="background-color: #eef4ff; padding: 0.75rem; border-radius: 8px;">
+  <strong>Insurance Info</strong><br />
+  <span><strong>Policy Number:</strong> POL113466</span><br />
+  <span><strong>Expiry Date:</strong> 2025-10-01</span><br />
+  <span><strong>Provider:</strong> The Hartford</span>
+</div>
+  </div>
+</div>
+</a>
+
+
+<a href="car-detail-Toyota Innova.html" style="text-decoration: none; color: inherit;">
+
+<div class="car-card" data-category="CAT07" data-status="Rented">
+  <img src="https://imgd.aeplcdn.com/642x336/n/cw/ec/140809/innova-crysta-exterior-right-front-three-quarter-2.png?isig=0&q=80" alt="Van" />
+  <h3>Toyota Innova</h3>
+  <p>Van - $90/day</p>
+  <div class="car-details">
+    <div class="insurance-details" style="background-color: #eef4ff; padding: 0.75rem; border-radius: 8px;">
+  <strong>Insurance Info</strong><br />
+  <span><strong>Policy Number:</strong> POL123467</span><br />
+  <span><strong>Expiry Date:</strong> 2026-05-22</span><br />
+  <span><strong>Provider:</strong> Zurich</span>
+</div>
+  </div>
+</div>
+</a>
+
+
+
+<a href="car-detail-Subaru Crosstrek.html" style="text-decoration: none; color: inherit;">
+
+<div class="car-card" data-category="CAT08" data-status="Available">
+  <img src="https://di-uploads-pod46.dealerinspire.com/bachmansubaru/uploads/2022/11/subaru-crosstrek-interior-features-in-louisville-ky.jpg
+" alt="Crossover" />
+  <h3>Subaru Crosstrek</h3>
+  <p>Crossover - $70/day</p>
+  <div class="car-details">
+    <div class="insurance-details" style="background-color: #eef4ff; padding: 0.75rem; border-radius: 8px;">
+  <strong>Insurance Info</strong><br />
+  <span><strong>Policy Number:</strong> POL133468</span><br />
+  <span><strong>Expiry Date:</strong> 2025-09-18</span><br />
+  <span><strong>Provider:</strong> CNA</span>
+</div>
+  </div>
+</div>
+</a>
+
+
+
+<a href="car-detail-Nissan Altima.html" style="text-decoration: none; color: inherit;">
+
+<div class="car-card" data-category="CAT02" data-status="Available">
+  <img src="https://wieck-nissanao-production.s3.amazonaws.com/photos/0df51f48c91c729cb3c2e1bb04ab589b9c406eee/preview-928x522.jpg
+" alt="Sedan" />
+  <h3>Nissan Altima</h3>
+  <p>Sedan - $58/day</p>
+  <div class="car-details">
+    <div class="insurance-details" style="background-color: #eef4ff; padding: 0.75rem; border-radius: 8px;">
+  <strong>Insurance Info</strong><br />
+  <span><strong>Policy Number:</strong> POL143469</span><br />
+  <span><strong>Expiry Date:</strong> 2026-07-01</span><br />
+  <span><strong>Provider:</strong> AXA</span>
+</div>
+  </div>
+</div>
+</a>
+
+
+<a href="car-detail-Tesla Model Y.html" style="text-decoration: none; color: inherit;">
+
+<div class="car-card" data-category="CAT06" data-status="Rented">
+  <img src="https://hips.hearstapps.com/hmg-prod/images/homepage-model-y-2-promo-hero-desktop-cn-678091687fa3f.jpg?crop=0.592xw:0.612xh;0.216xw,0.343xh&resize=1200:*
+" alt="Electric" />
+  <h3>Tesla Model Y</h3>
+  <p>Electric - $105/day</p>
+  <div class="car-details">
+    <div class="insurance-details" style="background-color: #eef4ff; padding: 0.75rem; border-radius: 8px;">
+  <strong>Insurance Info</strong><br />
+  <span><strong>Policy Number:</strong> POL153470</span><br />
+  <span><strong>Expiry Date:</strong> 2025-08-30</span><br />
+  <span><strong>Provider:</strong> AIG</span>
+</div>
+  </div>
+</div>
+</a>
+
+
+<a href="car-detail-Volvo S90.html" style="text-decoration: none; color: inherit;">
+
+<div class="car-card" data-category="CAT03" data-status="Available">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnKOQERR50JD6VQPDYXff1DxtpdLZBpdvFLQ&s
+" alt="Luxury" />
+  <h3>Volvo S90</h3>
+  <p>Luxury - $125/day</p>
+  <div class="car-details">
+    <div class="insurance-details" style="background-color: #eef4ff; padding: 0.75rem; border-radius: 8px;">
+  <strong>Insurance Info</strong><br />
+  <span><strong>Policy Number:</strong> POL163471</span><br />
+  <span><strong>Expiry Date:</strong> 2026-06-15</span><br />
+  <span><strong>Provider:</strong> Chubb</span>
+</div>
+  </div>
+</div>
+</a>
+
+
+<a href="car-detail-Honda Fit.html" style="text-decoration: none; color: inherit;">
+
+<div class="car-card" data-category="CAT04" data-status="Available">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRD6ptQh2IbyKXaRblSfiao-lbBdbslwoZrQ&s
+" alt="Hatchback" />
+  <h3>Honda Fit</h3>
+  <p>Hatchback - $48/day</p>
+  <div class="car-details">
+    <div class="insurance-details" style="background-color: #eef4ff; padding: 0.75rem; border-radius: 8px;">
+  <strong>Insurance Info</strong><br />
+  <span><strong>Policy Number:</strong> POL173472</span><br />
+  <span><strong>Expiry Date:</strong> 2025-11-25</span><br />
+  <span><strong>Provider:</strong> Erie Insurance</span>
+</div>
+  </div>
+</div>
+</a>
+
+
+<a href="car-detail-Toyota Prius.html" style="text-decoration: none; color: inherit;">
+
+<div class="car-card" data-category="CAT09" data-status="Rented">
+  <img src="https://img.sm360.ca/images/article/erin-park-automotive/125878//2023_priusprime_xse_supersonicred_007-1500x10071708724617358.jpg
+" alt="Hybrid" />
+  <h3>Toyota Prius</h3>
+  <p>Hybrid - $68/day</p>
+  <div class="car-details">
+    <div class="insurance-details" style="background-color: #eef4ff; padding: 0.75rem; border-radius: 8px;">
+  <strong>Insurance Info</strong><br />
+  <span><strong>Policy Number:</strong> POL183473</span><br />
+  <span><strong>Expiry Date:</strong> 2026-03-30</span><br />
+  <span><strong>Provider:</strong> Amica Mutual</span>
+</div>
+  </div>
+</div>
+</a>
+
+  </section>
+
+  <footer>
+    <p>&copy; 2025 QuickRide Rentals. All rights reserved.</p>
+  </footer>
+
+  <!-- JavaScript for Filtering -->
+  <script>
+    const categoryFilter = document.getElementById("categoryFilter");
+    const statusFilter = document.getElementById("statusFilter");
+    const cars = document.querySelectorAll(".car-card");
+
+    function filterCars() {
+      const selectedCategory = categoryFilter.value;
+      const selectedStatus = statusFilter.value;
+
+      cars.forEach(car => {
+        const carCategory = car.getAttribute("data-category");
+        const carStatus = car.getAttribute("data-status");
+
+        const matchCategory = !selectedCategory || carCategory === selectedCategory;
+        const matchStatus = !selectedStatus || carStatus === selectedStatus;
+
+        if (matchCategory && matchStatus) {
+          car.style.display = "block";
+        } else {
+          car.style.display = "none";
+        }
+      });
+    }
+
+    categoryFilter.addEventListener("change", filterCars);
+    statusFilter.addEventListener("change", filterCars);
+  </script>
+</body>
+</html>

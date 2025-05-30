@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>QuickRide Rentals - FAQ</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+  <style>
+    .faq-item {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      margin-bottom: 1rem;
+      cursor: pointer;
+      padding: 1rem 1.5rem;
+      transition: background-color 0.3s ease;
+    }
+    .faq-item:hover {
+      background-color: #e9f1ff;
+    }
+    .faq-question {
+      font-weight: 600;
+      margin: 0;
+      position: relative;
+      padding-right: 25px;
+    }
+    .faq-question::after {
+      content: '+';
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.5rem;
+      transition: transform 0.3s ease;
+    }
+    .faq-item.active .faq-question::after {
+      content: '−';
+      transform: translateY(-50%);
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      margin-top: 0.5rem;
+      font-weight: 400;
+      color: #444;
+    }
+    .faq-item.active .faq-answer {
+      max-height: 500px; /* large enough to show content */
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav-container">
+      <h2 class="logo">QuickRide Rentals</h2>
+      <nav>
+        <a href="home.html">Home</a>
+        <a href="cars.html">Cars</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+        <a href="faq.html" aria-current="page">FAQ</a>
+        <a href="login.html">Login</a>
+        <a href="sign up.html">Sign Up</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="faq-section container" style="padding: 3rem 1rem; max-width: 900px; margin: auto;">
+    <h2 style="text-align: center; margin-bottom: 2rem;">Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+      <h3 class="faq-question">How do I book a car?</h3>
+      <p class="faq-answer">You can browse our available cars on the Cars page and click "Book a Ride Now" to start your reservation.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3 class="faq-question">What documents do I need to rent a car?</h3>
+      <p class="faq-answer">You need a valid driver’s license and a credit/debit card for payment.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3 class="faq-question">Can I cancel or modify my booking?</h3>
+      <p class="faq-answer">Yes, you can modify or cancel your booking up to 24 hours before the rental start time through your account dashboard.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3 class="faq-question">Are there any age restrictions?</h3>
+      <p class="faq-answer">Renters must be at least 21 years old with a valid driver’s license.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3 class="faq-question">Is insurance included?</h3>
+      <p class="faq-answer">Basic insurance is included in all rentals. Additional coverage options are available at checkout.</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 QuickRide Rentals. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.faq-item').forEach(item => {
+      item.addEventListener('click', () => {
+        item.classList.toggle('active');
+      });
+    });
+  </script>
+</body>
+</html>
