@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Car Rental Payment</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #ffffff;
+      color: #333;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    .dark-mode {
+      background-color: #111827;
+      color: #f9fafb;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 3rem auto;
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+      background-color: #ffffff;
+      color: #333;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    .dark-mode .container {
+      background-color: #1f2937;
+      color: #f9fafb;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 2rem;
+      color: #0d6efd;
+      margin-bottom: 1.5rem;
+    }
+
+    .dark-mode h2 {
+      color: #93c5fd;
+    }
+
+    .form-label {
+      font-weight: 600;
+      display: block;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      margin-bottom: 1rem;
+      border-radius: 12px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+      background: inherit;
+      color: inherit;
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: #0d6efd;
+      box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.2);
+    }
+
+    .payment-method {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .method-card {
+      padding: 0.8rem;
+      border: 2px solid transparent;
+      border-radius: 12px;
+      background-color: #f1f3f5;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .dark-mode .method-card {
+      background-color: #374151;
+    }
+
+    .method-card:hover {
+      border-color: #0d6efd;
+      background-color: #e7f1ff;
+    }
+
+    .dark-mode .method-card:hover {
+      background-color: #475569;
+    }
+
+    .method-card img {
+      width: 36px;
+      height: 36px;
+      object-fit: contain;
+      display: block;
+      margin: 0 auto 0.5rem;
+    }
+
+    .btn-primary {
+      width: 100%;
+      padding: 0.75rem;
+      background: linear-gradient(90deg, #0d6efd, #4dabf7);
+      color: white;
+      border: none;
+      border-radius: 14px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .btn-primary:hover {
+      background: linear-gradient(90deg, #0b5ed7, #339af0);
+    }
+
+    .toggle-mode {
+      display: block;
+      text-align: right;
+      margin-bottom: 1rem;
+    }
+
+    .toggle-mode button {
+      padding: 6px 12px;
+      background-color: #ccc;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .dark-mode .toggle-mode button {
+      background-color: #4b5563;
+      color: #f1f5f9;
+    }
+  </style>
+</head>
+<body id="body">
+  <div class="container">
+    <div class="toggle-mode">
+      <button onclick="toggleDarkMode()">Toggle Dark Mode</button>
+    </div>
+
+    <h2>Make a Payment</h2>
+    <form action="/process_payment" method="POST">
+      <label class="form-label" for="paymentId">Payment ID</label>
+      <input class="form-control" type="text" name="paymentId" id="paymentId" required />
+
+      <label class="form-label" for="carID">Car ID</label>
+      <input class="form-control" type="text" name="carId" id="carId" required />
+
+      <label class="form-label" for="paymentDate">Payment Date</label>
+      <input class="form-control" type="date" name="paymentDate" id="paymentDate" required />
+
+      <label class="form-label" for="amount">Amount (BDT)</label>
+      <input class="form-control" type="number" name="amount" id="amount" required />
+
+      <label class="form-label">Payment Method</label>
+      <div class="payment-method">
+        <label class="method-card">
+          <input type="radio" name="method" value="Card" required />
+          <img src="https://cdn-icons-png.flaticon.com/512/633/633611.png" alt="Card" />
+          Card
+        </label>
+        <label class="method-card">
+          <input type="radio" name="method" value="Bkash" required />
+          <img src="https://inews.zoombangla.com/wp-content/uploads/2025/05/bKash.jpg" alt="Bkash" />
+          Bkash
+        </label>
+        <label class="method-card">
+          <input type="radio" name="method" value="Nagad" required />
+          <img src="https://play-lh.googleusercontent.com/9ps_d6nGKQzfbsJfMaFR0RkdwzEdbZV53ReYCS09Eo5MV-GtVylFD-7IHcVktlnz9Mo" alt="Nagad" />
+          Nagad
+        </label>
+        <label class="method-card">
+          <input type="radio" name="method" value="Rocket" required />
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTa72jjxmBhP7jDcL_d2ONde0G1ztGDxpfe9Q&s" alt="Rocket" />
+          Rocket
+        </label>
+      </div>
+
+      <label class="form-label" for="transactionId">Transaction ID</label>
+      <input class="form-control" type="text" name="transactionId" id="transactionId" required />
+
+      <button type="submit" class="btn-primary">Submit Payment</button>
+    </form>
+  </div>
+
+  <script>
+    // Toggle dark mode
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+    }
+
+    // Prefill form fields from URL parameters
+    window.onload = function () {
+      const params = new URLSearchParams(window.location.search);
+      document.getElementById("carId").value = params.get("carId") || "";
+      document.getElementById("amount").value = params.get("amount") || "";
+
+      const car = params.get("car");
+      if (car) {
+        document.querySelector("h2").textContent = `Payment for ${car}`;
+      }
+
+      // Optional: set today's date by default
+      const today = new Date().toISOString().split("T")[0];
+      document.getElementById("paymentDate").value = today;
+    };
+  </script>
+</body>
+</html>
