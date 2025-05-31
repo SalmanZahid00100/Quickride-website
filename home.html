@@ -29,7 +29,7 @@
     <div class="container">
       <h1>Welcome to QuickRide Rentals</h1>
       <p>Rent cars, track rentals, and make secure payments with ease.</p>
-      <a href="cars.html" class="btn">Book a Ride Now</a>
+      <a href="#" onclick="handleBooking()" class="btn">Book a Ride Now</a>
     </div>
   </section>
 
@@ -74,5 +74,18 @@
       <p>&copy; 2025 QuickRide Rentals. All rights reserved.</p>
     </div>
   </footer>
+
+  <script>
+  function handleBooking() {
+    const loggedIn = sessionStorage.getItem("loggedIn");
+    if (loggedIn === "true") {
+      window.location.href = "cars.html"; // or a specific car detail page later
+    } else {
+      alert("Please log in first to book a car.");
+      window.location.href = "login.html";
+    }
+  }
+</script>
+
 </body>
 </html>
